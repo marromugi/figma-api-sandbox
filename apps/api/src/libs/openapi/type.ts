@@ -3,7 +3,7 @@ import type {
 	ErrorStatus,
 	OkStatus,
 } from "openapi-typescript-helpers";
-import type { components, paths } from "@/__generated__/schema"
+import type { components, paths } from "../../__generated__/schema"
 
 type HttpMethod = Extract<
 	AllHttpMethod,

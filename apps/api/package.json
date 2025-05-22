@@ -1,0 +1,51 @@
+{
+  "name": "@figma-api-sandbox/api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup",
+    "generate:client": "npx openapi-typescript https://raw.githubusercontent.com/figma/rest-api-spec/refs/heads/main/openapi/openapi.yaml --output ./src/__generated__/schema.d.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "@hono/valibot-validator": "^0.5.2",
+    "@hono/zod-validator": "^0.5.0",
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "hono": "4.7.4",
+    "zod": "^3.25.20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "openapi-typescript": "^7.6.1",
+    "openapi-typescript-helpers": "^0.0.15",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "volta": {
+    "node": "22.0.0"
+  },
+  "engines": {
+    "node": "22.0.0"
+  },
+  "pnpm": {
+    "executionEnv": {
+      "nodeVersion": "22.0.0"
+    }
+  },
+  "type": "module",
+  "main": "./dist/lib.cjs",
+  "module": "./dist/lib.mjs",
+  "types": "./dist/lib.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib.d.ts",
+      "require": "./dist/lib.cjs",
+      "default": "./dist/lib.mjs"
+    }
+  }
+}
